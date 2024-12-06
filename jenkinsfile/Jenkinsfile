@@ -7,15 +7,10 @@ pipeline{
                 
             }
         }
-        stage('Rename'){
-            steps{
-                bat 'mv target/*.jar target/app.jar'
-                
-            }
-        }
+       
         stage('execute'){
             steps{
-                bat 'java -jar target/app.jar'
+                bat 'java -jar target/MavenProject-v1.jar'
             }
         }
         
