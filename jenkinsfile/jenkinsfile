@@ -1,0 +1,22 @@
+pipeline{
+    agent any
+    stages{
+        stage('Building'){
+            steps{
+                sh 'mvn install'
+                echo 'Building is done'
+            }
+        }
+        stage('execute'){
+            steps{
+                sh 'java -jar target /* .jar'
+            }
+        }
+        stage('file'){
+            steps{
+                echo 'File is uploaded'
+            }
+        }
+        
+    }
+}
