@@ -7,9 +7,15 @@ pipeline{
                 echo 'Building is done'
             }
         }
+        stage('Rename'){
+            steps{
+                sh 'mv target/*.jar app.jar'
+                echo 'rename is done'
+            }
+        }
         stage('execute'){
             steps{
-                sh 'java -jar target /* .jar'
+                sh 'java -jar target/app.jar'
             }
         }
         stage('file'){
