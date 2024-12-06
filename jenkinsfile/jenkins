@@ -4,13 +4,13 @@ pipeline{
         stage('Building'){
             steps{
                 sh 'mvn install'
-                echo 'Building is done'
+                
             }
         }
         stage('Rename'){
             steps{
-                sh 'mv target/*.jar app.jar'
-                echo 'rename is done'
+                sh 'mv target/*.jar target/app.jar'
+                
             }
         }
         stage('execute'){
